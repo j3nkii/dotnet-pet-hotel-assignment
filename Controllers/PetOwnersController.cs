@@ -33,7 +33,18 @@ namespace pet_hotel.Controllers
             return petOwner;
         }
 
+        [HttpPut("{id}")]
 
+        public PetOwner Put(int id, PetOwner petOwner) {
+
+            petOwner.id = id;
+
+            _context.Update(petOwner);
+            _context.SaveChanges();
+
+            return petOwner;
+        }
+        
         [HttpDelete("{id}")]
 
         public void Delete(int id) {
