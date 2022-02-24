@@ -19,11 +19,13 @@ namespace pet_hotel.Controllers
             _context = context;
         }
 
-        // [HttpGet]
+        [HttpGet]
         public IEnumerable<Pet> GetAll()
         {
             return _context.pets.Include(pet => pet.petOwner);
         }
+
+        
 
 
 
