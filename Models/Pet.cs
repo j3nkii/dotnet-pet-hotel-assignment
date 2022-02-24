@@ -27,7 +27,7 @@ namespace pet_hotel
         public string name {get; set;}
         public PetColorType color {get; set;}
         public PetBreedType breed {get; set;}
-        public DateTime checkedInAt {get; set;}
+        public DateTime? checkedInAt {get; set;}
 
         [ForeignKey("{id}")]
         public int petOwnerId {get; set;}
