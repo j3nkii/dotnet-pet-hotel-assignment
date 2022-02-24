@@ -62,5 +62,15 @@ namespace pet_hotel.Controllers
             _context.pets.Remove(pet);
             _context.SaveChanges();
         }
+
+        [HttpPost]
+        public ActionResult<Pet> Post(Pet pet)
+        {
+            // Add this pet to the database
+            _context.Add(pet);
+            _context.SaveChanges();
+            //Console.WriteLine(pet);
+            return pet;
+        }
     }
 }

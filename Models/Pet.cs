@@ -6,7 +6,8 @@ using System;
 namespace pet_hotel
 {
     public enum PetBreedType {
-            Shepard,
+            Shepherd,
+            Poodle,
             Beagle,
             Bulldog,
             Terrier,
@@ -25,9 +26,16 @@ namespace pet_hotel
     public class Pet {
         public int id {get; set;}
         public string name {get; set;}
+        [JsonConverter(typeof(JsonStringEnumConverter))]
+
         public PetColorType color {get; set;}
+        [JsonConverter(typeof(JsonStringEnumConverter))]
+
         public PetBreedType breed {get; set;}
+
+
         public DateTime? checkedInAt {get; set;}
+
 
         [ForeignKey("{id}")]
         public int petOwnerId {get; set;}
